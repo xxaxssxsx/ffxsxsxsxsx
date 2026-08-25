@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SensiFF — Sensibilidade inteligente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="bg-glow"></div>
+<header class="topbar">
+  <a class="logo" href="#home"><span>◉</span> SENSI<span class="accent">FF</span></a>
+  <nav><a href="#recursos">Recursos</a><a href="#planos">Planos</a><a href="#faq">FAQ</a></nav>
+  <div class="nav-actions"><button class="btn ghost" onclick="showAuth('login')">Entrar</button><button class="btn primary" onclick="showAuth('cadastro')">Criar conta</button></div>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-copy">
+    <div class="pill">● GERADOR INTELIGENTE PARA FREE FIRE</div>
+    <h1>Precisão. Controle.<br><span>Seu melhor setup.</span></h1>
+    <p>Gere configurações personalizadas de sensibilidade para o seu aparelho em poucos segundos.</p>
+    <div class="hero-actions"><button class="btn primary big" onclick="showAuth('cadastro')">Começar agora <b>→</b></button><button class="btn ghost big" onclick="document.querySelector('#recursos').scrollIntoView({behavior:'smooth'})">Conhecer recursos</button></div>
+    <div class="trust"><span>✓ Configuração por aparelho</span><span>✓ Histórico</span><span>✓ PIX</span></div>
+  </div>
+  <div class="hero-card">
+    <div class="mini-top"><span>SEU SETUP</span><span class="live">● ONLINE</span></div>
+    <div class="device"><div class="notch"></div><div class="screen"><div class="cross">+</div><strong>98</strong><small>GERAL</small><div class="meter"><i style="width:98%"></i></div><div class="row"><span>RED DOT</span><b>95</b></div><div class="row"><span>MIRA 2X</span><b>92</b></div><div class="row"><span>MIRA 4X</span><b>88</b></div></div></div>
+    <div class="floating">✦ Otimizado</div>
+  </div>
+</section>
+
+<section id="recursos" class="section">
+  <div class="section-head"><span class="eyebrow">RECURSOS</span><h2>Tudo em um só painel.</h2><p>Uma experiência criada para ser rápida no celular e simples de usar.</p></div>
+  <div class="features"><article><b>01</b><h3>Gerador personalizado</h3><p>Marca, modelo e estilo entram no cálculo da sua configuração.</p></article><article><b>02</b><h3>PIX integrado</h3><p>Adicione saldo por PIX e acompanhe a confirmação automaticamente.</p></article><article><b>03</b><h3>Área VIP</h3><p>Usuários VIP geram configurações sem cobrança avulsa.</p></article></div>
+</section>
+
+<section id="planos" class="section pricing"><div class="section-head"><span class="eyebrow">PLANOS</span><h2>Escolha como usar.</h2></div>
+<div class="price-grid"><article><span>AVULSO</span><h3>R$ 10</h3><p>por geração</p><button class="btn ghost full" onclick="showAuth('cadastro')">Criar conta</button></article><article class="featured"><span>VIP</span><h3>Premium</h3><p>Gerações sem cobrança avulsa enquanto o VIP estiver ativo.</p><button class="btn primary full" onclick="showAuth('cadastro')">Começar</button></article></div></section>
+
+<section id="faq" class="section faq"><div class="section-head"><span class="eyebrow">FAQ</span><h2>Dúvidas rápidas.</h2></div><details><summary>Como funciona o gerador?</summary><p>Você informa o aparelho e o estilo de jogo; o backend calcula e devolve uma configuração personalizada.</p></details><details><summary>O PIX é real?</summary><p>Sim, quando o backend estiver configurado com um Access Token de produção do Mercado Pago. O saldo só é creditado após confirmação do pagamento.</p></details></section>
+</main>
+
+<footer>© 2026 SensiFF. Todos os direitos reservados.</footer>
+
+<div id="authModal" class="modal"><div class="auth-card"><button class="x" onclick="closeAuth()">×</button><div class="auth-logo">◉ SENSI<span>FF</span></div>
+<div id="authLogin"><h2>Bem-vindo de volta</h2><p>Entre na sua conta.</p><input id="loginEmail" type="email" placeholder="E-mail"><input id="loginSenha" type="password" placeholder="Senha"><button class="btn primary full" onclick="login()">Entrar</button><small>Não tem conta? <a onclick="showAuth('cadastro')">Criar conta</a></small></div>
+<div id="authCadastro" class="hidden"><h2>Crie sua conta</h2><p>Comece a usar o SensiFF.</p><input id="cadNome" placeholder="Nome"><input id="cadEmail" type="email" placeholder="E-mail"><input id="cadTel" placeholder="WhatsApp / Discord"><input id="cadSenha" type="password" placeholder="Senha (mín. 6 caracteres)"><button class="btn primary full" onclick="cadastro()">Criar conta</button><small>Já tem conta? <a onclick="showAuth('login')">Entrar</a></small></div>
+<div id="authMsg"></div></div></div>
+<script src="js/config.js"></script><script src="js/app.js"></script>
+</body></html>
